@@ -3,8 +3,10 @@ import Link from 'next/link';
 import React from 'react';
 import { Button } from './ui/button';
 import { LayoutDashboard, PenBox } from 'lucide-react';
+import { checkUser } from '@/lib/checkUser';
 
-const Header = () => {
+const Header = async () => {
+  await checkUser()
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -20,7 +22,7 @@ const Header = () => {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="flex items-center gap-2 text-gray-700 hover:text-blue-600 border-gray-300"
+                className="flex items-center gap-2 text-gray-700 border-gray-300"
               >
                 <LayoutDashboard size={18} />
                 <span className="hidden md:inline">Dashboard</span>
@@ -29,7 +31,7 @@ const Header = () => {
 
             {/* Add Transaction Button */}
             <Link href="/transaction/create">
-              <Button className="flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700">
+              <Button className="flex items-center gap-2 text-white">
                 <PenBox size={18} />
                 <span className="hidden md:inline">Add Transaction</span>
               </Button>
@@ -47,7 +49,7 @@ const Header = () => {
 
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard">
-              <Button variant="outline" className="border-gray-300 text-gray-700 hover:text-blue-600">
+              <Button variant="outline" className="border-gray-300 text-gray-700">
                 Login
               </Button>
             </SignInButton>
