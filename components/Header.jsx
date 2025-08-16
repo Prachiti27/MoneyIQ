@@ -10,15 +10,12 @@ const Header = async () => {
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-gray-900">
           MoneyIQ
         </Link>
 
-        {/* Navigation Buttons */}
         <div className="flex items-center space-x-4">
           <SignedIn>
-            {/* Dashboard Button */}
             <Link href="/dashboard">
               <Button
                 variant="outline"
@@ -28,8 +25,6 @@ const Header = async () => {
                 <span className="hidden md:inline">Dashboard</span>
               </Button>
             </Link>
-
-            {/* Add Transaction Button */}
             <Link href="/transaction/create">
               <Button className="flex items-center gap-2 text-white">
                 <PenBox size={18} />
@@ -37,7 +32,6 @@ const Header = async () => {
               </Button>
             </Link>
 
-            {/* User Avatar */}
             <UserButton
               appearance={{
                 elements: {
