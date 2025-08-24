@@ -56,7 +56,7 @@ export const featuresData = [
   {
   icon: <Receipt className="h-8 w-8 text-gray-500" />,
   title: "Spending Tracker",
-  description: "Easily track daily expenses and categorize transactions automatically to stay on top of your finances.",
+  description: "Easily track daily expenses and categorize transactions automatically.",
 }
 ];
 

@@ -5,8 +5,22 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <section className="bg-white">
-      <div className="max-w-6xl mx-auto px-6 py-28 text-center">
+    <section className="relative bg-white overflow-hidden">
+      {/* Grid background */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)
+            `,
+            backgroundSize: "32px 32px",
+          }}
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-28 text-center relative z-10">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
           Smarter Financial Decisions,
           <span className="text-gray-600"> Powered by AI</span>
